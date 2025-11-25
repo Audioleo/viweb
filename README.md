@@ -37,10 +37,7 @@ viweb/
 ## 📦 Instalación
 
 ```html
-<link rel="stylesheet" href="viweb/base.css">
-<link rel="stylesheet" href="viweb/layout.css">
-<link rel="stylesheet" href="viweb/ui.css">
-<link rel="stylesheet" href="viweb/helpers.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/audioleo/viweb/css/viweb-min.css">
 ```
 
 Opcional:
