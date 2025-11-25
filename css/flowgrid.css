@@ -16,7 +16,7 @@
    • Para reordenamientos complejos, define order en todos 
      los ítems involucrados en la misma fila/contexto.
    • Funciona tanto en Grid como en Flexbox.
-======================================= */
+=========================================== */
 
 
 /* ------------------------------
@@ -116,3 +116,4 @@
     /* Neutral */
     .ord-lg-0 { order: 0; }
 }
+
