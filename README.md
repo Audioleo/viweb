@@ -1,7 +1,7 @@
 # ViWeb CSS Framework — v1.0
 
 ViWeb es un mini-framework CSS modular y ligero, diseñado para ser claro, escalable y fácil de extender.
-Se basa en dos pilares:
+Se basa en dos perspectivas de diseño:
 
 1. **Diseño dividido en capas** (Base → Layout → UI → Utilities)
 2. **CSS modular** (cada módulo es independiente y evoluciona por separado)
