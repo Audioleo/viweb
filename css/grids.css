@@ -5,7 +5,7 @@
    - 12 columnas fijas
    - Utilidades de columnas, filas y gaps
    - Incluye variantes responsivas (sm, md, lg)
-======================================= */
+========================================== */
 
 
 /* ------------------------------
@@ -201,3 +201,4 @@
     .start-lg-11 { grid-column-start: 11; }
     .start-lg-12 { grid-column-start: 12; }
 }
+
