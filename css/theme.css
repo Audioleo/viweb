@@ -1,0 +1,44 @@
+/* -----------------------------------
+   THEME
+   Tipografía y Colores
+----------------------------------- */
+
+body {
+	font-family: var(--vw-font-main);
+    color: var(--vw-color-text);
+	background-color: var(--vw-color-bg);
+}
+
+.content {
+	background-color: var(--vw-color-bg-content);
+}
+
+.header {
+	border-bottom: 1px solid var(--vw-color-border)
+}
+.header .logo {
+	color: var(--vw-color-primary);
+}
+.header .logo .a-title {
+	color: #000;
+}
+.header .logo .b-title {
+	color: #bbb;
+}
+
+h1, h2, h3 {
+	font-family: var(--vw-font-caps);
+}
+
+.subtitle {
+	font-size: 1.25rem;
+    color: #bbb;
+}
+
+a {
+	color: var(--vw-color-primary);
+}
+
+.footer {
+    border-top: 1px solid var(--vw-color-border);
+}

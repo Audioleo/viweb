@@ -1,0 +1,132 @@
+/* =======================================
+   VIWEB 1.0
+   Módulo: base.css
+   Autor: Leo Cabrera
+   Descripción:
+   - Define variables globales (tema)
+   - Aplica reset ligero
+   - Estilos tipográficos base
+   - Configuración de elementos HTML comunes
+   ======================================= */
+
+/* ------------------------------
+   Variables globales (Tema)
+   Se usan en todos los módulos.
+   ------------------------------ */
+
+:root {
+    /* Tipografía */
+	--vw-font-caps: Montserrat, sans-serif;
+    --vw-font-main: system-ui, -apple-system, "Segoe UI", sans-serif; 
+    --vw-font-mono: ui-monospace, monospace;
+
+    /* Colores principales */
+    --vw-color-text: #222;
+	--vw-color-text-muted: #a9a8a8;
+	
+    --vw-color-bg: #fafafa;
+	--vw-color-bg-content: #fff;
+	--vw-color-border: #ddd;
+	--vw-color-shadow: #ccc;
+	
+	/* Colores de enlaces y acciones */
+	--vw-color-primary: #7d2eff;
+
+    /* Espaciado general estándar */
+    --vw-gap: 0.5rem;
+
+    /* Ancho máximo del contenedor */
+    --vw-container-max: 1200px;
+
+    /* Radios globales */
+    --vw-radius: 0.5rem;
+	--vw-btn-radius: 8px;
+}
+
+
+/* ------------------------------
+   Reset + Base
+   Reset suave + estilos mínimos.
+   ------------------------------ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+
+/* Elimina márgenes generales */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografía y comportamiento del texto */
+body {
+	font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #222;
+    line-height: 1.55;
+    text-rendering: optimizeLegibility;
+}
+
+/* Títulos base */
+h1, h2, h3 {
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* Evita dobles márgenes si un hX es el primer elemento */
+h1:first-child, 
+h2:first-child, 
+h3:first-child {
+	margin-top: 0;
+}
+
+/* Párrafos */
+p {
+  margin: 0 0 1rem;
+}
+
+/* Imágenes fluidas por defecto */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Enlaces: estilo minimalista */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Listas con indentación controlada */
+ul, ol {
+    margin: 0 0 1rem;
+    padding-left: 1.2em;
+}
+
+/* Tablas básicas (sin estilos visuales) */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Código inline */
+code {
+	background: #f3f3f3;
+	padding: 2px 5px;
+	border-radius: .5rem;
+	font-size: .9rem;
+	font-family: "Courier New", monospace;
+	color: #219161;
+}

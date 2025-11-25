@@ -1,0 +1,166 @@
+/* ============================================================
+   LAYOUT (Contenedores)
+   Sistema de contenedores responsivos para estructura global
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Variables principales de Layout
+   ------------------------------------------------------------
+   Se definen los anchos máximos de los contenedores según 
+   los breakpoints del sistema (mobile-first).
+   ly-c-width --> contenedor adaptable que cambia con el viewport.
+   ly-c-m-width --> contenedor de ancho maximo fijo.
+   ------------------------------------------------------------ */
+:root {
+	/* Anchos fijos por breakpoint */
+	--ly-container-xs: 100%;
+	--ly-container-sm: 540px;
+	--ly-container-md: 720px;
+	--ly-container-lg: 960px;
+	--ly-container-xl: 1140px;
+	--ly-container-xxl: 1320px;
+	
+	/* Ancho de contenedores activos */
+	--ly-c-width: var(--ly-container-xs); /* Cambiará según el viewport */
+	--ly-c-m-width: var(--ly-container-lg); /* Ancho máximo fijo */
+	
+	/* Alineación global del header */
+	--ly-align-header: center;
+	
+	/* Rellenos horizontales */
+	--ly-pad-x-main: 0.5rem;
+	--ly-pad-x-main-content: 0;
+}
+
+/* ------------------------------------------------------------
+   Breakpoints (modifican variables principales)
+   ------------------------------------------------------------ */
+
+@media (min-width: 576px) {  /* sm */
+	:root {
+		--ly-c-width: var(--ly-container-sm);
+	}
+}
+
+@media (min-width: 768px) { /* md */
+	:root {
+		--ly-c-width: var(--ly-container-md);
+		
+		/* El header deja de estar centrado en desktop */
+		--ly-align-header: initial;
+		
+		/* Ajuste general de rellenos */
+		--ly-pad-x-main: 1rem;
+		--ly-pad-x-main-content: 1rem;
+	}
+}
+
+@media (min-width: 992px) { /* lg */
+	:root {
+		--ly-c-width: var(--ly-container-lg);
+
+		/* Más respiración en layout amplio */
+		--ly-pad-x-main: 1.3rem;
+		--ly-pad-x-main-content: 1.3rem;
+	}
+}
+
+@media (min-width: 1200px) { /* xl */
+    :root {
+		--ly-c-width: var(--ly-container-xl);
+	}
+}
+
+@media (min-width: 1400px) { /* xxl */
+    :root {
+		--ly-c-width: var(--ly-container-xxl);
+	}
+}
+
+/* ============================================================
+   Containers (Standard, Wider, Fluid)
+   ============================================================ */
+
+/* Centran el contenido */
+.ly-container,
+.ly-container-max {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Ancho completo con padding interno */
+.ly-container,
+.ly-container-max,
+.ly-container-fluid {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Contenedor estándar */
+.ly-container {
+	max-width: var(--ly-c-width);
+}
+
+/* Contenedor más amplio (para páginas tipo blog o landing) */
+.ly-container-max {
+	max-width: var(--ly-c-m-width);
+}
+
+/* ============================================================
+   Header + Inner
+   ============================================================ */
+.ly-header {
+	text-align: var(--ly-align-header);
+	padding: .3rem var(--ly-pad-x-main);
+}
+
+/* Logotipo dentro del header */
+.ly-header .logo {
+	font-weight: 800;
+	font-size: 2.6rem;
+	margin: 0;
+}
+
+/* ============================================================
+   Main + Inner
+   ============================================================ */
+.ly-main {
+	margin-top: 3rem;
+	margin-bottom: 3.3rem;
+	padding-left: var(--ly-pad-x-main);
+	padding-right: var(--ly-pad-x-main);
+}
+
+/* Contenido principal (cuando existe aside) */
+.ly-main .main-content {
+	padding-right: var(--ly-pad-x-main-content);
+}
+
+/* ============================================================
+   Aside + Inner
+   ============================================================ */
+
+/* 
+   display: contents → permite que el aside
+   no genere un contenedor visual, pero mantiene
+   sus nodos hijos dentro del flujo del grid.
+
+   Muy útil para layouts donde el aside solo actúa
+   como agrupador semántico.
+*/
+.ly-aside {
+	display: contents;
+}
+
+.ly-aside .aside-l {
+	padding-bottom: 1rem;
+}
+
+/* ============================================================
+   Footer + Inner
+   ============================================================ */
+.ly-footer div .foot-attrib {
+	font-size: 0.9em;
+	margin-top: 1rem;
+}

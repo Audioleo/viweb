@@ -1,0 +1,342 @@
+/* ============================================================
+   VIWEB 1.0 – UI COMPONENTS
+   Conjunto de componentes visuales reutilizables para el tema.
+   Incluye navegación, tarjetas, botones, callouts, tooltips y
+   navegación lateral. Cada bloque mantiene independencia modular.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   NAV 1.0 – Navegación principal responsive
+   ------------------------------------------------------------
+   La justificación del menú se controla por variables CSS.
+   Mobile: centrado
+   Desktop (≥768px): alineado a la derecha
+------------------------------------------------------------ */
+:root {
+	--vw-nav-justify: center; /* nav centrado por defecto */
+}
+
+@media (min-width: 768px) {  /* md */
+	:root {
+		--vw-nav-justify: flex-end; /* nav alineado a la derecha */
+	}
+}
+
+/* Contenedor del menú */
+.ui-nav {
+	width: 100%;
+	align-self: end; /* útil cuando se coloca dentro de grids */
+}
+
+/* Lista horizontal del menú */
+.ui-nav .nav-li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	gap: 1rem; /* Espaciado entre items */
+	align-items: center;
+	justify-content: var(--vw-nav-justify, space-between);
+}
+
+/* Enlaces del menú */
+.ui-nav .nav-li a {
+	text-decoration: none;
+	font-weight: 600;
+	padding: 0.4rem 0.6rem;
+	margin-bottom: .3rem;
+	border-radius: 0.3rem;
+
+	display: inline-block;
+	color: #222;
+	background: transparent;
+	transition: background .2s, color .2s;
+}
+
+/* Hover del enlace */
+.ui-nav .nav-li a:hover {
+	background: #e0e0e0;
+	text-decoration: none;
+}
+
+
+
+/* ------------------------------------------------------------
+   Caja de Código (ui-code)
+   Estilo visual para mostrar bloques de código y preformateado.
+   Incluye un botón de copiar opcional.
+------------------------------------------------------------ */
+
+.ui-code {
+	font-family: Consolas, monospace;
+	font-size: 0.9em;
+	margin: 1em 0;
+	background-color: #f6f6f6;
+	border-left: 4px solid #bbb;
+	border-radius: var(--vw-radius);
+	overflow-x: auto;
+	position: relative; /* permite ubicar copy-btn */
+}
+
+/* Etiqueta del lenguaje */
+.ui-code .lang {
+	margin: .4rem .5rem;
+	display: inline-block;
+}
+
+/* Bloque <pre> */
+.ui-code pre {
+	font-size: .9rem;
+	color: #1f1f1f;
+	background: #fafafa;
+	margin: 0;
+	padding: 1rem;
+	border-radius: calc(var(--vw-radius) - 1px);
+	overflow-x: auto;
+}
+
+/* El inner <code> dentro de <pre> */
+.ui-code pre code {
+	background: transparent;
+	padding: 0;
+}
+
+/* Botón copiar */
+.ui-code .copy-btn {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background: #3b3b3b;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 0.8em;
+	padding: 4px 8px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.ui-code .copy-btn:hover {
+	background: #555;
+}
+
+
+
+/* ------------------------------------------------------------
+   COMPONENT: Cards
+   Tarjetas simples con header y contenido.
+------------------------------------------------------------ */
+
+.ui-card {
+	background: #fff;
+	border-radius: var(--vw-radius);
+	padding: 1rem;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+	border: 1px solid #eee;
+}
+
+.ui-card .card-header {
+	font-weight: 700;
+	margin-bottom: .5rem;
+	font-size: 1.1rem;
+}
+
+.ui-card .card-body {
+	color: var(--vw-color-text);
+	font-size: .95rem;
+	line-height: 1.5;
+}
+
+
+
+/* ------------------------------------------------------------
+   COMPONENT: Buttons
+   Botones primarios, outline y soft.
+------------------------------------------------------------ */
+
+.ui-btn {
+	display: inline-block;
+	padding: .55rem 1rem;
+	border-radius: var(--vw-radius);
+	font-weight: 600;
+	font-size: .95rem;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: background .15s, color .15s, border-color .15s;
+}
+
+/* Botón principal */
+.ui-btn-primary {
+	background: var(--vw-color-primary);
+	color: white;
+}
+.ui-btn-primary:hover {
+	opacity: 0.9;
+}
+
+/* Botón outline */
+.ui-btn-outline {
+	background: transparent;
+	border-color: var(--vw-color-primary);
+	color: var(--vw-color-primary);
+}
+.ui-btn-outline:hover {
+	background: var(--vw-color-primary);
+	color: white;
+}
+
+/* Botón soft (tono suave) */
+.ui-btn-soft {
+	background: rgba(125, 46, 255, 0.1);
+	color: var(--vw-color-primary);
+}
+.ui-btn-soft:hover {
+	background: rgba(125, 46, 255, 0.18);
+}
+
+
+
+/* ------------------------------------------------------------
+   COMPONENT: Callouts
+   Notas, advertencias, ejemplos, tips, info, etc.
+   Usados para documentación o contenido destacado.
+------------------------------------------------------------ */
+
+.ui-callout,
+.ui-note,
+.ui-warning,
+.ui-example,
+.ui-info,
+.ui-tip,
+.ui-danger,
+.ui-history {
+	padding: 1rem;
+	margin: 1.2rem 0;
+	border-radius: var(--vw-radius);
+}
+
+/* Base: Note */
+.ui-note {
+	background: #eef7ff;
+	border-left: 4px solid #3b82f6;
+}
+
+/* Advertencia */
+.ui-warning {
+	background: #fff7e6;
+	border-left: 4px solid #f59e0b;
+}
+
+/* Ejemplo */
+.ui-example {
+	background: #f0f9f0;
+	border-left: 4px solid #22c55e;
+}
+
+/* Información */
+.ui-info {
+	background: #eef7ff;
+	border-left: 4px solid #3b82f6;
+}
+
+/* Tip */
+.ui-tip {
+	background: #f0fdf4;
+	border-left: 4px solid #22c55e;
+}
+
+/* Error / peligro */
+.ui-danger {
+	background: #fff1f2;
+	border-left: 4px solid #ef4444;
+}
+
+/* Nota histórica / contexto */
+.ui-history {
+	background: #faf5ff;
+	border-left: 4px solid #a855f7;
+}
+
+
+
+/* ------------------------------------------------------------
+   COMPONENT: Tooltip
+   Tooltip simple activado por clase "active" o JS.
+------------------------------------------------------------ */
+
+.ui-tooltip {
+	position: relative;
+	cursor: pointer;
+	color: #0044aa;
+	text-decoration: underline;
+}
+
+/* Cuerpo del tooltip (oculto por defecto) */
+.ui-tooltip .tooltip-text {
+	visibility: hidden;
+	opacity: 0;
+	max-width: 260px;
+	background: #fffffc;
+	color: #333;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	padding: 6px 16px 6px 8px;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	position: absolute;
+	z-index: 10;
+	top: 1.45em;
+	left: 35px;
+	right: -65px;
+}
+
+/* Activación del tooltip */
+.ui-tooltip.active .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* Botón de cierre “×” */
+.ui-tooltip .close-btn {
+	position: absolute;
+	top: 1px;
+	right: 6px;
+	color: #666;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 0.9em;
+}
+.ui-tooltip .close-btn:hover {
+	color: #000;
+}
+
+
+
+/* ------------------------------------------------------------
+   COMPONENT: Aside Navigation (Responsive)
+   Navegación lateral para documentación o secciones largas.
+------------------------------------------------------------ */
+@media (min-width: 768px) {
+	:root {
+		--ui-pad-aside-nav: 0 0 1rem;
+		--ui-mar-aside-nav: 0;
+		--ui-bor-aside-nav: none;
+	}
+}
+
+.ui-aside-nav {
+	padding: var(--ui-pad-aside-nav, 1rem);
+	margin: var(--ui-mar-aside-nav, 1.2rem 0);
+	border: var(--ui-bor-aside-nav, 1px solid #ddd);
+}
+
+.ui-aside-nav h3 {
+	border-bottom: var(--ui-bor-aside-nav, 1px solid #ddd);
+}
+
+.ui-aside-nav ul li {
+	list-style-type: none;
+}
