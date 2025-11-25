@@ -1,4 +1,4 @@
-/* =======================================
+/* =========================================
    VIWEB 1.0
    Módulo: base.css
    Autor: Leo Cabrera
@@ -7,7 +7,7 @@
    - Aplica reset ligero
    - Estilos tipográficos base
    - Configuración de elementos HTML comunes
-   ======================================= */
+   ========================================= */
 
 /* ------------------------------
    Variables globales (Tema)
@@ -130,3 +130,4 @@ code {
 	font-family: "Courier New", monospace;
 	color: #219161;
 }
+
