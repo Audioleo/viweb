@@ -40,12 +40,6 @@ viweb/
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/audioleo/viweb/css/viweb-min.css">
 ```
 
-Opcional:
-
-```html
-<link rel="stylesheet" href="viweb/theme.css">
-```
-
 ---
 
 ## 🧱 Filosofía del Framework
